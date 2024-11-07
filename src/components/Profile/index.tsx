@@ -53,7 +53,7 @@ export default function Profile() {
                 </Typography>
                 <Typography sx={{
                 }}>
-                    Thaís started this journey after being fired from Fakedoor, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin lorem turpis, varius ac lacus vel, gravida condimentum nisl. Pellentesque semper tellus egestas venenatis laoreet.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin lorem turpis, varius ac lacus vel, gravida condimentum nisl. Pellentesque semper tellus egestas venenatis laoreet.
                 </Typography>
 
                 <Typography sx={{
