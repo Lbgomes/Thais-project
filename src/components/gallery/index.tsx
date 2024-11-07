@@ -1,5 +1,4 @@
-import { Box, Theme, Typography, useMediaQuery } from "@mui/material";
-import { useState } from "react";
+import { Box, Typography } from "@mui/material";
 import Image from "next/image";
 import imagem_1 from '@/assets/20240830_171335.jpg'
 import imagem_2 from '@/assets/20240929_113749.jpg'
@@ -156,7 +155,6 @@ export default function Gallery() {
                             borderRadius: "8px",
                         }}
                     >
-                        borderRadius: "8px",
                         <Image src={galleryItems[4].src} alt={galleryItems[4].title} fill style={{ objectFit: "cover", borderRadius: "8px" }} />
                     </Box>
                 </motion.div>
