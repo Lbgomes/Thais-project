@@ -1,4 +1,5 @@
 "use client"
+import "./globals.css";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter";
 import Theme from "@/styles/theme";
 import { ThemeProvider } from "@mui/material/styles";
