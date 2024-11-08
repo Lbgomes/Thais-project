@@ -1,4 +1,5 @@
 import { Box, FormControl, TextareaAutosize, TextField, Typography } from "@mui/material";
+import { FormInput } from "../input";
 
 
 export default function Contact() {
@@ -7,18 +8,40 @@ export default function Contact() {
             display: "flex",
             flexDirection: "column",
             gap: "16px",
+            alignItems: "center",
             padding: "0 16px",
-            width: "100%",
             marginTop: "4rem",
-
+            maxWidth: "800px",
+            width: "100%",
         }}>
-            <Typography>
+            <Typography sx={{
+                fontFamily: "Shadows Into Light Two, cursive",
+                fontSize: "calc(0.4 * 4rem)",
+            }}>
                 Contact me
             </Typography>
-            <FormControl>
-                <TextField label="Name" variant="outlined" />
-                <TextField label="Email" variant="outlined" />
-                <TextareaAutosize placeholder="Message" id="time" />
+            <FormControl sx={{
+                maxWidth: "800px",
+                width: "100%"
+            }}>
+                <Box sx={{
+                    width: "100%",
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "16px"
+                }}>
+
+                    <FormInput onChange={() => { }} name="name" label="Name" type="text" placeholder="Name" />
+                    <FormInput onChange={() => { }} name="name" label="Email" type="text" placeholder="Email" />
+
+                    <TextareaAutosize placeholder="Message" id="time" style={{
+                        height: "150px",
+                        borderRadius: "8px",
+                        padding: "16px",
+                        border: "1px solid #0000003b",
+
+                    }} />
+                </Box>
             </FormControl>
 
         </Box>

@@ -43,6 +43,7 @@ export default function Gallery() {
                 display: "flex",
                 flexDirection: "column",
                 placeItems: "center",
+                gap: "1rem",
             }}>
                 <Typography sx={{
                     fontSize: "calc(0.6 * 4rem)",
@@ -64,101 +65,137 @@ export default function Gallery() {
                     width: "100%",
                     display: "flex",
                     gap: "3rem",
+                    flexDirection: "column",
                     placeContent: "center",
+                    "@media (max-width: 850px)": {
+                        gap: "1.5rem",
+                    }
                 }}
             >
                 <Box sx={{
                     display: "flex",
-                    flexDirection: "column",
                     gap: "3rem",
+                    placeContent: "center",
+
+                    "@media (max-width: 850px)": {
+                        gap: "1.5rem",
+                        flexDirection: "column"
+                    }
                 }}>
 
-                    {galleryItems.slice(0, 2).map((item, index) => (
-                        <motion.div
-                            key={index}
-                            initial="offscreen"
-                            whileInView="onscreen"
-                            viewport={{ once: true, amount: 0.8 }}
-                            style={{
-                                width: "450px"
-                            }}
-                        >
-                            <motion.div variants={cardVariants}>
-                                <Box
-                                    sx={{
-                                        width: "100%",
-                                        aspectRatio: "3 / 4",
-                                        position: "relative",
-                                        overflow: "hidden",
-                                        borderRadius: "8px",
-                                    }}
-                                >
-                                    <Image src={item.src} alt={item.title} fill style={{ objectFit: "cover" }} />
-                                </Box>
-                            </motion.div>
-                        </motion.div>
-                    ))}
-                </Box>
-                <Box sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: "3rem",
-                    marginTop: "25%"
-                }}>
+                    <Box sx={{
+                        display: "flex",
+                        flexDirection: "column",
+                        gap: "1.5rem",
+                        "@media (min-width: 850px)": {
+                            gap: "3rem",
+                        }
+                    }}>
 
-                    {galleryItems.slice(2, 4).map((item, index) => (
-                        <motion.div
-                            key={index}
-                            initial="offscreen"
-                            whileInView="onscreen"
-                            viewport={{ once: true, amount: 0.8 }}
-                            style={{
-                                width: "450px"
+                        {galleryItems.slice(0, 2).map((item, index) => (
+                            <motion.div
+                                key={index}
+                                initial="offscreen"
+                                whileInView="onscreen"
+                                viewport={{ once: true, amount: 0.8 }}
+
+                            >
+                                <motion.div variants={cardVariants}>
+                                    <Box
+                                        sx={{
+                                            width: "450px",
+                                            aspectRatio: "3 / 4",
+                                            position: "relative",
+                                            overflow: "hidden",
+                                            borderRadius: "8px",
+                                            "@media(max-width: 1000px)": {
+                                                width: "330px"
+                                            },
+                                            "@media(max-width: 720px)": {
+                                                width: "100%"
+                                            }
+                                        }}
+                                    >
+                                        <Image src={item.src} alt={item.title} style={{ position: "unset", width: "100%", height: "100%", objectFit: "cover" }} />
+                                    </Box>
+                                </motion.div>
+                            </motion.div>
+                        ))}
+                    </Box>
+                    <Box sx={{
+                        display: "flex",
+                        flexDirection: "column",
+                        gap: "1.5rem",
+                        "@media (min-width: 850px)": {
+                            gap: "3rem",
+                            marginTop: "25%"
+                        }
+                    }}>
+
+                        {galleryItems.slice(2, 4).map((item, index) => (
+                            <motion.div
+                                key={index}
+                                initial="offscreen"
+                                whileInView="onscreen"
+                                viewport={{ once: true, amount: 0.8 }}
+                            >
+                                <motion.div variants={cardVariants}>
+                                    <Box
+                                        sx={{
+                                            width: "450px",
+                                            aspectRatio: "3 / 4",
+                                            position: "relative",
+                                            overflow: "hidden",
+                                            borderRadius: "8px",
+                                            "@media(max-width: 1000px)": {
+                                                width: "330px"
+                                            },
+                                            "@media(max-width: 720px)": {
+                                                width: "100%"
+                                            }
+                                        }}
+                                    >
+                                        <Image src={item.src} alt={item.title} style={{ position: "unset", width: "100%", height: "100%", objectFit: "cover" }} />
+                                    </Box>
+                                </motion.div>
+                            </motion.div>
+                        ))}
+                    </Box>
+
+                </Box>
+
+                <motion.div
+                    initial="offscreen"
+                    whileInView="onscreen"
+                    viewport={{ once: true, amount: 0.8 }}
+                    style={{
+                        borderRadius: "8px",
+
+                    }}
+                >
+                    <motion.div variants={cardVariants}>
+                        <Box
+                            sx={{
+                                position: "relative",
+                                width: "950px",
+                                justifySelf: "center",
+                                aspectRatio: "6 / 3",
+                                borderRadius: "8px",
+                                "@media(max-width: 1000px)": {
+                                    width: "710px"
+                                },
+                                "@media(max-width: 720px)": {
+                                    width: "100%"
+                                }
                             }}
                         >
-                            <motion.div variants={cardVariants}>
-                                <Box
-                                    sx={{
-                                        width: "100%",
-                                        aspectRatio: "3 / 4",
-                                        position: "relative",
-                                        overflow: "hidden",
-                                        borderRadius: "8px",
-                                    }}
-                                >
-                                    <Image src={item.src} alt={item.title} fill style={{ objectFit: "cover" }} />
-                                </Box>
-                            </motion.div>
-                        </motion.div>
-                    ))}
-                </Box>
+                            <Image src={galleryItems[4].src} alt={galleryItems[4].title} style={{ position: "unset", width: "100%", height: "100%", objectFit: "cover", borderRadius: "8px" }} />
+                        </Box>
+                    </motion.div>
+                </motion.div>
 
             </Box>
 
-            <motion.div
-                initial="offscreen"
-                whileInView="onscreen"
-                viewport={{ once: true, amount: 0.8 }}
-                style={{
-                    width: "100%",
-                    borderRadius: "8px",
-
-                }}
-            >
-                <motion.div variants={cardVariants}>
-                    <Box
-                        sx={{
-                            position: "relative",
-                            width: "950px",
-                            justifySelf: "center",
-                            aspectRatio: "6 / 3",
-                            borderRadius: "8px",
-                        }}
-                    >
-                        <Image src={galleryItems[4].src} alt={galleryItems[4].title} fill style={{ objectFit: "cover", borderRadius: "8px" }} />
-                    </Box>
-                </motion.div>
-            </motion.div>
         </Box >
     )
 };
